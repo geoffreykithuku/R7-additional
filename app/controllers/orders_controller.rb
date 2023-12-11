@@ -29,8 +29,12 @@ end
   def update
     @order = Order.find(params[:id])
     @order.update(order_params)
+if @order.save
 
     redirect_to order_path(@order)
+else
+  render :edit
+end
   end
 
   def destroy

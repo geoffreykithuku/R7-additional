@@ -72,4 +72,15 @@ order_attributes = FactoryBot.attributes_for(:order, customer_id: customer.id)
       expect(response).to redirect_to order_path(id: order.id)
     end
   end
+
+  describe "put order_path with invalid data" do
+    it "does not update the order record or redirect" do
+      order = FactoryBot.create(:order)
+      put order_path(id: order.id), params: { order: { product_name: nil } }
+      order.reload
+      expect(order.product_name).to_not eq(nil)
+
+      expect(response).to render_template(:edit)
+    end
+  end
 end
