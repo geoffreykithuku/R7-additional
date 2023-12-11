@@ -1,19 +1,18 @@
 <div id="<%= dom_id customer %>">
  
 
-   <p>
-    <strong>Full name:</strong>
-    <%= customer.full_name %>
-  </p>
+ 
+    <tr style="border: 1px solid black">
+      <td><%= customer.first_name %></td>
+      <td><%= customer.last_name %></td>
+      <td><%= customer.email %></td>
+      <td><%= customer.phone %></td>
+      <td><%= customer.orders.count %></td>
+      <td><%= link_to 'Show', customer %></td>
+      <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+      <td><%= link_to 'Destroy', customer, method: :delete, data: { turbo_confirm: "Are you sure?" } %></td>
+    </tr>
+ 
 
-  <p>
-    <strong>Phone:</strong>
-    <%= customer.phone %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= customer.email %>
-  </p>
-
+ 
 </div>

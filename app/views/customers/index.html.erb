@@ -3,12 +3,24 @@
 <h1>Customers</h1>
 
 <div id="customers">
+   <table style="border: 1px solid black">
+    <tr style="border: 1px solid black">
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>No of Orders</th>
+      <th colspan="3"></th>
   <% @customers.each do |customer| %>
     <%= render customer %>
-    <p>
-      <%= link_to "Show this customer", customer %>
-    </p>
+  <br />
   <% end %>
+   </table>
 </div>
 
 <%= link_to "New customer", new_customer_path %>
+<br />
+<br />
+
+<%= link_to 'Link to all orders', orders_path %>
+
