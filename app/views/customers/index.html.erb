@@ -1,10 +1,11 @@
-<p style="color: green"><%= notice %></p>
+
 
 <h1>Customers</h1>
 
 <div id="customers">
-   <table style="border: 1px solid black">
-    <tr style="border: 1px solid black">
+   <table class='table table-info table-responsive table-bordered table-hover'>
+    <tr >
+      <th>Icon</th>
       <th>First name</th>
       <th>Last name</th>
       <th>Email</th>
@@ -17,10 +18,4 @@
   <% end %>
    </table>
 </div>
-
-<%= link_to "New customer", new_customer_path %>
-<br />
-<br />
-
-<%= link_to 'Link to all orders', orders_path %>
 
