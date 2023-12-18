@@ -1,0 +1,34 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Orders</h1>
+
+
+<div id="orders">
+   
+    <table style="border: 1px solid black">
+        <tr style="border: 1px solid black">
+            <th>Product name</th> 
+            <th>Product count</th>
+            <th>Customer name</th>
+            <th colspan="3"></th>
+        <tr>
+  <% @orders.each do |order| %>
+   
+        <tr style="border: 1px solid black">
+            <td><%= order.product_name %></td>
+            <td><%= order.product_count %></td>
+            <td><%= order.customer.full_name %></td>
+            <td><%= link_to 'Show', order %></td>
+           
+        </tr>
+ 
+
+  
+  <% end %>
+     </table>
+</div>
+
+<%= link_to "New order", new_order_path %>
+<br />
+
+<%= link_to 'Back to all customers', customers_path %>

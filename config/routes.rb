@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root to: 'customers#index'
+
+
+
+  resources :orders
 end
